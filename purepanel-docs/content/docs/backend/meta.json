@@ -1,0 +1,11 @@
+{
+  "title": "后端",
+  "icon": "Server",
+  "description": "获取关于后端服务开发的帮助",
+  "root": true,
+  "pages": [
+    "---基础---",
+    "index",
+    "configuration"
+  ]
+}

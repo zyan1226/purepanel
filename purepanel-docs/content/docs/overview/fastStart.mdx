@@ -1,0 +1,86 @@
+---
+title: 快速上手
+description: 获取源代码，并启动项目
+icon: Rocket
+---
+import {ServerIcon} from 'lucide-react';
+import {TvMinimal} from 'lucide-react';
+import {FileSliders} from 'lucide-react';
+import {Step, Steps} from 'fumadocs-ui/components/steps';
+
+## 📦 后端项目
+
+<Callout type="warn">注意！本项目基于 SpringBoot3，所以必须使用 Java17+。</Callout>
+
+<Steps>
+    <Step>
+        ### 获取代码
+        <Tabs items={['下载 Release 包', '拉取 GitHub 仓库代码']}>
+            <Tab value="下载 Release 包">前往 [版本发布页](https://github.com/purepanel-projects/purepanel-backend/releases)
+                获取相应版本代码。</Tab>
+            <Tab value="拉取 GitHub 仓库代码">
+                ```shell
+                git clone https://github.com/purepanel-projects/purepanel-backend.git
+                ```
+            </Tab>
+        </Tabs>
+    </Step>
+
+    <Step>
+        ### 启动前准备
+
+        <Callout type="warn">需要先部署好 MySQL 和 Redis 。</Callout>
+
+        #### 1. 初始化 MySQl 数据库
+
+        运行项目目录下 `sql/purepanel.sql` 文件初始化数据库。
+
+        #### 2. 修改项目配置
+
+        前往 `src/main/resources/application.yml` 修改 Mysql、Redis 等配置。
+        <Card icon={<FileSliders/>} title="配置说明" href="/docs/backend/configuration">
+            参考配置说明调整一些不常见和自定义的配置项。
+        </Card>
+    </Step>
+
+</Steps>
+
+## 💻 前端项目
+
+<Steps>
+    <Step>
+        ### 获取代码
+        <Tabs items={['下载 Release 包', '拉取 GitHub 仓库代码']}>
+            <Tab value="下载 Release 包">前往 [版本发布页](https://github.com/purepanel-projects/purepanel-frontend/releases)
+                获取相应版本代码。</Tab>
+            <Tab value="拉取 GitHub 仓库代码">
+                ```shell
+                git clone https://github.com/purepanel-projects/purepanel-frontend.git
+                ```
+            </Tab>
+        </Tabs>
+    </Step>
+    <Step>
+        ### 安装依赖
+
+        ```shell
+        npm install
+        ```
+    </Step>
+    <Step>
+        ### 启动项目
+
+        ```shell
+        npm run dev
+        ```
+    </Step>
+</Steps>
+
+<Cards>
+    <Card icon={<ServerIcon/>} title="继续学习后端项目" href="/docs/backend">
+        获取关于后端服务开发的帮助
+    </Card>
+    <Card icon={<TvMinimal/>} title="继续学习前端项目" href="/docs/frontend">
+        获取关于前端界面开发的帮助
+    </Card>
+</Cards>

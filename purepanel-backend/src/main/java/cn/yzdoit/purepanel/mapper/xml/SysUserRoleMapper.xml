@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yzdoit.purepanel.mapper.SysUserRoleMapper">
+
+    <select id="listByUserId" resultType="cn.yzdoit.purepanel.pojo.bo.SysUserRoleBo">
+        select sur.user_id,
+        sur.role_id,
+        sr.name
+        from sys_user_role sur
+        left join sys_role sr on sur.role_id = sr.id
+        <where>
+            <if test="userIdList!=null and userIdList.size()>1">
+                sur.user_id IN
+                <foreach collection="userIdList" item="userId" open="(" separator="," close=")">
+                    #{userId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+</mapper>

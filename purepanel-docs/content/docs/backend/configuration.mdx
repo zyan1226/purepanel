@@ -1,0 +1,33 @@
+---
+title: 配置
+description: 了解一些不常见和自定义的配置项
+icon: FileSliders
+---
+
+## 阿里云百炼 API Key
+
+请前往 [阿里云百炼](https://bailian.console.aliyun.com) 注册并获取 API Key。
+
+如果暂时不想使用AI功能，可以前往 `config/AIConfig.java` 注释掉 ChatClient 的 Bean 配置，避免没有获取到 API Key 启动报错。
+
+```yml
+spring:
+  ai:
+    dashscope:
+      api-key: ${AI_DASHSCOPE_API_KEY}
+```
+## 自定义配置
+
+```yml
+purepanel:
+  #是否将服务器抛出的异常信息在接口响应参数中体现
+  res-exception-enabled: true
+  #本地文件存储路径
+  local-object-store-base-path: /Users/zyan/Documents/dev/srv/purepanel/
+  #根用户ID，该账号会被保护，且拥有系统最高权限
+  root-user-id: 1948042872317145090
+  #登录配置
+  login-config:
+    #单会话登录 一个账号多次登录会互相挤下线
+    single-session-login-enabled: false
+```

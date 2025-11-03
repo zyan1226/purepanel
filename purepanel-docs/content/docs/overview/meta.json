@@ -1,0 +1,10 @@
+{
+  "title": "开始",
+  "icon": "House",
+  "description": "快速了解和上手项目",
+  "root": true,
+  "pages": [
+    "index",
+    "fastStart"
+  ]
+}

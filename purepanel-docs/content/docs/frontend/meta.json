@@ -1,0 +1,10 @@
+{
+  "title": "前端",
+  "root": true,
+  "icon": "TvMinimal",
+  "description": "获取关于前端界面开发的帮助",
+  "pages": [
+    "---简介---",
+    "index"
+  ]
+}
