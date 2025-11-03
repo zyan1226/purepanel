@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.yzdoit</groupId>
-    <artifactId>purepanel-backend</artifactId>
+    <artifactId>purepanel-server</artifactId>
     <version>0.0.1</version>
-    <name>purepanel-backend</name>
-    <description>purepanel-backend</description>
+    <name>purepanel-server</name>
+    <description>purepanel-server</description>
     <url/>
     <licenses>
         <license/>
