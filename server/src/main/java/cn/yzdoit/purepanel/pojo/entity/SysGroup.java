@@ -24,7 +24,7 @@ import java.io.Serializable;
 @TableName(value = "sys_group")
 @Schema(description = "群组信息表")
 @EqualsAndHashCode(callSuper = true)
-public class SysGroup extends BaseEntity implements Serializable {
+public class SysGroup extends BaseEntity {
 
     @Serial
     private static final long serialVersionUID = 4138591747213204128L;
