@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex flex-col gap-4 p-6">
-    <p class="text-3xl font-bold">菜单权限</p>
+    <p class="text-3xl font-bold mt-14">菜单权限</p>
     <t-form @reset="resetSearchFormData" @submit="getPermissionTreeList" layout="inline">
       <t-form-item label-width="0">
         <t-input clearable v-model="searchFormData.title" placeholder="按标题模糊查询"/>
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="tsx">
-import {ref, onMounted, reactive, onUpdated} from 'vue';
+import {onMounted, onUpdated, reactive, ref} from 'vue';
 import PermissionFormModal from "@/pages/system/permission/components/PermissionFormModal.vue";
 import {allTreeListApi, deleteApi} from "@/api/permissionApi.ts";
 import type {SysPermission, SysPermissionTreeListRes} from "@/types/SysPermission.ts";

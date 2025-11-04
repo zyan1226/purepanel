@@ -1,17 +1,12 @@
 <template>
-  <t-head-menu class="!bg-transparent">
-    <t-button class="shadow-xl !bg-transparent backdrop-blur-3xl" variant="text" shape="round"
+  <t-head-menu class="!bg-transparent !absolute !w-0 !h-0">
+    <t-button class="shadow-xl !bg-transparent backdrop-blur-3xl !fixed" variant="text" shape="round"
               @click="useAsideCollapsedStore().reverse()">
       <template #icon>
         <t-icon :name="useAsideCollapsedStore().asideCollapsed?'menu-fold':'menu-unfold'" size="20"/>
       </template>
     </t-button>
-    <!--    <t-input class="!w-56 !ml-auto mr-4" readonly default-value="搜索菜单">-->
-    <!--      <template #suffixIcon>-->
-    <!--        <t-icon name="search"/>-->
-    <!--      </template>-->
-    <!--    </t-input>-->
-    <div class="ml-auto flex flex-row items-center justify-center
+    <div class="ml-auto flex flex-row items-center justify-center !fixed right-2
     mr-[var(--td-comp-margin-xxl)] gap-2 px-2 py-1 shadow-xl !bg-transparent backdrop-blur-3xl rounded-full">
       <t-tooltip content="AI 助理">
         <t-button class="!p-2" variant="text" shape="round" @click="router.push('/aiChatbot')">
@@ -45,7 +40,7 @@
 import {useAsideCollapsedStore} from '@/stores/asideCollapsedStore.ts'
 import {onMounted, onUnmounted, ref} from "vue";
 import {type DropdownProps, MessagePlugin} from "tdesign-vue-next";
-import {KeyIcon, UserIcon, SunnyIcon, LogoutIcon, MoonIcon} from "tdesign-icons-vue-next";
+import {KeyIcon, LogoutIcon, MoonIcon, SunnyIcon, UserIcon} from "tdesign-icons-vue-next";
 import {useRouter} from "vue-router";
 import ChangePwdModal from "@/components/ChangePwdModal.vue";
 import {getFileNetworkPath} from "@/utils/fileUtils.ts";

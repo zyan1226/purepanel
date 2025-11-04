@@ -4,9 +4,7 @@
       <layout-aside-nav/>
     </t-aside>
     <t-layout class="h-screen !bg-transparent overflow-auto">
-      <t-header class="!bg-transparent sticky top-0 z-3">
-        <layout-header/>
-      </t-header>
+      <layout-header/>
       <t-content class="bg-[var(--td-bg-color-container)]">
         <layout-content/>
       </t-content>

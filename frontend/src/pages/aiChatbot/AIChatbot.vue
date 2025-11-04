@@ -1,6 +1,6 @@
 <template>
-  <div class="flex-row flex h-full text-[var(--td-text-color-primary)]">
-    <div class="flex flex-col w-1/6 min-w-max border-r border-r-[var(--td-border-level-1-color)] p-4">
+  <div class="flex-row h-screen flex text-[var(--td-text-color-primary)]">
+    <div class="flex flex-col w-1/6 min-w-max p-4 mt-12">
       <div class="flex items-center flex-row p-2 gap-1
           hover:bg-[var(--td-bg-color-container-hover)] cursor-pointer rounded-lg"
            @click="handleNewConversation">
@@ -11,10 +11,12 @@
       <div v-for="conversation in conversationList"
            :key="conversation.id"
            @mouseenter="hoverConversationId=conversation.id"
+           @mouseleave="hoverConversationId = ''"
            @click="()=>handleConversationClick(conversation.id)"
-           class="flex items-center flex-row p-2 hover:bg-[var(--td-bg-color-container-hover)] cursor-pointer rounded-lg mt-2">
+           :class="['flex items-center flex-row p-2 hover:bg-[var(--td-bg-color-container-hover)] cursor-pointer rounded-lg mt-2',
+           currentConversationId === conversation.id ? 'bg-[var(--td-bg-color-container-hover)]' : '']">
         <span class="w-48 text-ellipsis overflow-hidden text-nowrap">{{ conversation.title }}</span>
-        <t-dropdown v-if="hoverConversationId === conversation.id"
+        <t-dropdown v-if="hoverConversationId === conversation.id || currentConversationId === conversation.id"
                     trigger="click"
                     :options="conversationOptions"
                     :hide-after-item-click="true"
@@ -25,18 +27,20 @@
     </div>
     <chat
         ref="chatRef"
-        class="!p-4"
-        style="height: calc(100vh - 56px)"
+        class="!px-2 !pb-4 border-l border-l-[var(--td-border-level-1-color)]"
         :reverse="false"
-        :clear-history="false"
-        :text-loading="textLoading"
-        :data="chatList"
-        animation="moving">
+        :clear-history="false">
       <div v-if="chatList.length === 0" class="flex flex-col justify-center gap-14 h-full">
         <p class="w-full text-center text-3xl">😊 我们先从哪里开始呢？</p>
       </div>
-      <template #content="{ item }">
-        <ChatContent class="markdown-body" :content="item.content" :role="item.role"/>
+      <template v-for="(item, index) in chatList" :key="index">
+        <chat-item :class="['markdown-body',index===0?'mt-12':'']"
+                   :content="item.content"
+                   :role="item.role"
+                   :avatar="item.avatar"
+                   :text-loading="index===chatList.length-1?textLoading:false"
+                   animation="moving"
+                   :variant="item.role==='user'?'base':'text'"/>
       </template>
       <template #footer>
         <chat-sender :textarea-props="{placeholder: '询问任何问题'}"
@@ -55,8 +59,8 @@
 import {nextTick, onMounted, ref} from 'vue';
 import {listChatbotChatRecordApi, listChatbotConversationApi, streamChatApi} from "@/api/chatbotApi.ts";
 import type {AiChatbotConversation} from "@/types/AiChatbotConversation.ts";
-import {Edit2Icon, DeleteIcon, ShareIcon} from 'tdesign-icons-vue-next';
-import {Chat, ChatSender, ChatContent, type ChatInstanceFunctions} from '@tdesign-vue-next/chat'
+import {DeleteIcon, Edit2Icon, ShareIcon} from 'tdesign-icons-vue-next';
+import {Chat, ChatItem, ChatSender} from '@tdesign-vue-next/chat'
 import {Snowflake} from "@theinternetfolks/snowflake";
 
 //当前会话ID
