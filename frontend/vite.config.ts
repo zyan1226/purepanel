@@ -18,7 +18,7 @@ export default defineConfig(({mode}) => {
             vueDevTools(),
             tailwindcss(),
             Components({
-                dts: true,
+                dts: false,
                 resolvers: []
             })
         ],
