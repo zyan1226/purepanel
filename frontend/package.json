@@ -14,6 +14,7 @@
     "@tailwindcss/vite": "^4.1.10",
     "@tdesign-vue-next/chat": "^0.4.5",
     "@theinternetfolks/snowflake": "^1.3.0",
+    "@vueuse/motion": "^3.0.3",
     "axios": "^1.10.0",
     "nprogress": "^0.2.0",
     "pinia": "^3.0.1",
