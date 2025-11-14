@@ -3,7 +3,6 @@ import {fileURLToPath, URL} from 'node:url'
 import {defineConfig, loadEnv} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
-import MotionResolver from 'motion-v/resolver'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -20,7 +19,7 @@ export default defineConfig(({mode}) => {
             tailwindcss(),
             Components({
                 dts: true,
-                resolvers: [MotionResolver()]
+                resolvers: []
             })
         ],
         resolve: {
