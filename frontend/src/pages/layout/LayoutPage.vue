@@ -3,7 +3,7 @@
     <t-aside class="max-w-min my-4 ml-4">
       <layout-aside-nav/>
     </t-aside>
-    <t-layout class="h-screen !bg-transparent overflow-auto">
+    <t-layout class="h-screen !bg-transparent overflow-hidden">
       <layout-header/>
       <t-content class="bg-[var(--td-bg-color-container)]">
         <layout-content/>
