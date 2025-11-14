@@ -1,16 +1,19 @@
 <template>
   <div class="h-14 absolute top-0 w-full backdrop-blur-3xl
     flex flex-row items-center px-6">
-    <img class="w-24" src="@/assets/logo-h.png" alt="logo">
+    <img class="w-10" src="@/assets/logo.png" alt="cloud"/>
+    <p class="ml-2 text-2xl font-serif text-[var(--td-text-color-brand)]">
+      PurePanel
+    </p>
     <div class="ml-auto">
-      <a target="_blank" href="https://github.com/purepanel-projects">
+      <a target="_blank" href="https://github.com/zyan1226/purepanel">
         <t-button variant="text">
           <template #icon>
             <t-icon name="logo-github"/>
           </template>
         </t-button>
       </a>
-      <a target="_blank" href="https://github.com/purepanel-projects">
+      <a target="_blank" href="https://github.com/zyan1226/purepanel">
         <t-button variant="text">
           <template #icon>
             <t-icon name="help-circle"/>
