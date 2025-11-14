@@ -1,7 +1,5 @@
 <template>
-  <RouterView v-motion :initial="{ opacity: 0, y: 50 }"
-              :enter="{ opacity: 1, y: 0 }"
-              :duration="250"/>
+  <RouterView/>
 </template>
 <script setup lang="ts">
 import {RouterView} from 'vue-router'
