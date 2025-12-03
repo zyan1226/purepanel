@@ -62,6 +62,7 @@ import type {AiChatbotConversation} from "@/types/AiChatbotConversation.ts";
 import {DeleteIcon, Edit2Icon, ShareIcon} from 'tdesign-icons-vue-next';
 import {Chat, ChatItem, ChatSender} from '@tdesign-vue-next/chat'
 import {Snowflake} from "@theinternetfolks/snowflake";
+import type {DropdownOption} from "tdesign-vue-next";
 
 //当前会话ID
 const currentConversationId = ref<string>()
@@ -76,7 +77,7 @@ onMounted(() => {
 })
 
 //历史聊天菜单项
-const conversationOptions = [
+const conversationOptions: Array<DropdownOption> = [
   {
     content: '重命名',
     value: 1,
@@ -187,7 +188,11 @@ function handleSend(value: string) {
     if (firstFlag) {
       textLoading.value = false
     }
-    chatList.value[chatList.value.length - 1].content += message
+    // 修复：添加类型检查以避免 "Object is possibly 'undefined'" 错误
+    const lastIndex = chatList.value.length - 1;
+    if (chatList.value[lastIndex]) {
+      chatList.value[lastIndex].content += message;
+    }
     scrollToBottom()
     firstFlag = false;
   }, () => {

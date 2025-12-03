@@ -4,14 +4,14 @@
       <span class="text-4xl/14 font-bold">登录到<br/>PurePanel</span>
       <t-form :data="formData" :label-width="0" @submit="handleSubmit" :rules="formRules">
         <t-form-item name="account">
-          <t-input size="large" v-model="formData.account" clearable placeholder="请输入账号">
+          <t-input v-model="formData.account" clearable placeholder="请输入账号">
             <template #prefix-icon>
               <user-icon/>
             </template>
           </t-input>
         </t-form-item>
         <t-form-item name="pwd">
-          <t-input size="large" v-model="formData.pwd" type="password" clearable placeholder="请输入密码">
+          <t-input v-model="formData.pwd" type="password" clearable placeholder="请输入密码">
             <template #prefix-icon>
               <lock-on-icon/>
             </template>
@@ -19,7 +19,7 @@
         </t-form-item>
         <t-form-item name="captcha">
           <div class="flex flex-row items-center w-full">
-            <t-input class="!w-54" size="large" v-model="formData.captcha" clearable placeholder="请输入验证码">
+            <t-input class="!w-54" v-model="formData.captcha" clearable placeholder="请输入验证码">
               <template #prefix-icon>
                 <VerifiedIcon/>
               </template>
@@ -29,7 +29,7 @@
           </div>
         </t-form-item>
         <t-form-item>
-          <t-button size="large" theme="primary" type="submit" block>登录</t-button>
+          <t-button theme="primary" type="submit" block>登录</t-button>
         </t-form-item>
       </t-form>
     </div>

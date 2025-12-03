@@ -7,13 +7,15 @@
       <template #body>
         <div class="h-44">
           <t-form-item v-if="needOldPwd" label="旧密码" name="oldPwd">
-            <t-input v-model="formData.oldPwd" type="password" placeholder="请输入旧密码"/>
+            <t-input autocomplete="current-password" v-model="formData.oldPwd" type="password"
+                     placeholder="请输入旧密码"/>
           </t-form-item>
           <t-form-item label="新密码" name="newPwd">
-            <t-input v-model="formData.newPwd" type="password" placeholder="请输入新密码"/>
+            <t-input autocomplete="new-password" v-model="formData.newPwd" type="password" placeholder="请输入新密码"/>
           </t-form-item>
           <t-form-item label="确认新密码" name="confirmPwd">
-            <t-input v-model="formData.confirmPwd" type="password" placeholder="请确认新密码"/>
+            <t-input autocomplete="new-password" v-model="formData.confirmPwd" type="password"
+                     placeholder="请确认新密码"/>
           </t-form-item>
         </div>
       </template>
@@ -30,19 +32,19 @@ import {changePwdApi, changeSelfPwdApi} from "@/api/userApi.ts";
 
 //定义接收的参数
 const props = defineProps<{
-  dialogVisible: Boolean;
-  needOldPwd?: Boolean;
+  dialogVisible: boolean;
+  needOldPwd?: boolean;
   userId?: string;
 }>()
 //定义事件
 const emit = defineEmits<{
-  (e: 'update:dialogVisible', value: Boolean): void;
+  (e: 'update:dialogVisible', value: boolean): void;
 }>()
 //定义表单校验规则
 const formRules: FormProps['rules'] = {
   oldPwd: [
     {
-      required: !!props.needOldPwd,
+      required: props.needOldPwd,
       message: '请输入原密码',
     },
     {
