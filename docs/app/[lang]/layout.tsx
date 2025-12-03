@@ -1,7 +1,6 @@
 import '@/app/[lang]/global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
-import { Inter } from 'next/font/google';
-import {Banner} from "fumadocs-ui/components/banner";
+import {RootProvider} from 'fumadocs-ui/provider';
+import {Inter} from 'next/font/google';
 import {ReactNode} from "react";
 import {defineI18nUI} from "fumadocs-ui/i18n";
 import {i18n} from "@/lib/i18n";
@@ -24,7 +23,6 @@ export default async function Layout({ children,  params }: {  params: Promise<{
   return (
     <html lang="zh-cn" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <Banner id="banner1" variant="rainbow">👏 欢迎使用 PurePanel</Banner>
         <RootProvider i18n={provider(lang)}>{children}</RootProvider>
       </body>
     </html>

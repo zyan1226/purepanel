@@ -21,7 +21,7 @@ export default function HomePage() {
                 <button className={cn(buttonVariants({
                     color: 'outline'
                 }), 'rounded-full px-4 text-md')}>
-                    <a href='https://github.com/purepanel-projects' target="_blank" rel="noopener noreferrer">
+                    <a href='https://github.com/zyan1226/purepanel' target="_blank" rel="noopener noreferrer">
                         GitHub
                     </a>
                 </button>
