@@ -1,11 +1,11 @@
 import {createBrowserRouter} from "react-router";
-import App from "../App.tsx";
-import {LoginPage} from "../pages/login/LoginPage.tsx";
+import LoginPage from "../pages/login/LoginPage.tsx";
+import LayoutPage from "../pages/layout/LayoutPage.tsx";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <App/>,
+        element: <LayoutPage/>,
     },
     {
         path: '/login',
