@@ -1,6 +1,6 @@
 <template>
-  <page-box>
-    <t-form class="w-1/2 self-center"
+  <page-box title="个人资料">
+    <t-form class="w-1/3 !mt-6"
             @submit="handleSubmit"
             :rules="formRules"
             :data="formData">

@@ -33,9 +33,9 @@ mybatis-plus:
 
 purepanel:
   res-exception-enabled: true
-  local-object-store-base-path: /Users/zyan/Documents/dev/srv/purepanel/
+  #  local-object-store-base-path: /Users/zyan/Documents/dev/srv/purepanel/
   root-user-id: 1948042872317145090
-#  local-object-store-base-path: C:\Users\bell1\Documents\dev\upload
+  local-object-store-base-path: C:\Users\bell1\Documents\dev\upload
   login-config:
     single-session-login-enabled: false
 
