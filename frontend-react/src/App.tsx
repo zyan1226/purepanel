@@ -1,20 +1,30 @@
 import {RouterProvider} from "react-router";
 import router from './router';
-import {theme} from "antd";
+import {ConfigProvider, theme} from "antd";
 
 
 const {useToken} = theme;
 
 function App() {
+
     const {token} = useToken();
 
     return (
-        <div style={{
-            backgroundColor: token.colorBgContainer,
-            color: token.colorText
-        }}>
-            <RouterProvider router={router}/>
-        </div>
+        <ConfigProvider
+            theme={{
+                token: {
+                    colorPrimary: "#637dff",
+                    colorInfo: "#637dff",
+                },
+                algorithm: theme.defaultAlgorithm
+            }}>
+            <div style={{
+                backgroundColor: token.colorBgContainer,
+                color: token.colorText
+            }}>
+                <RouterProvider router={router}/>
+            </div>
+        </ConfigProvider>
     )
 }
 
