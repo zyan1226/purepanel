@@ -8,7 +8,7 @@ export default function LoginPage() {
             <div className="flex flex-col gap-10">
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex flex-row gap-4">
-                        <img className="w-10" src={Logo}/>
+                        <img alt="logo" className="w-10" src={Logo}/>
                         <p className="text-3xl font-bold">
                             PurePanel
                         </p>
@@ -22,10 +22,10 @@ export default function LoginPage() {
                     <Form.Item name="password">
                         <Input.Password prefix={<LockOutlined/>} placeholder="请输入密码"/>
                     </Form.Item>
-                    <Form.Item name="code">
+                    <Form.Item name="captcha">
                         <div className="flex flex-row gap-2 items-center">
                             <Input prefix={<SafetyOutlined/>} placeholder="请输入验证码"/>
-                            <img className="h-9 w-30 rounded-md" src="https://picsum.photos/200/200"/>
+                            <img alt="captcha" className="h-9 w-30 rounded-md" src="https://picsum.photos/200/200"/>
                         </div>
                     </Form.Item>
                     <Form.Item>
