@@ -206,7 +206,12 @@ function handleSend(value: string) {
 /* 恢复markdown-body的样式 */
 .markdown-body ul,
 .markdown-body ol,
-.markdown-body li {
+.markdown-body li,
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5 {
   all: revert !important;
 }
 
@@ -218,6 +223,10 @@ function handleSend(value: string) {
 
 .markdown-body code {
   font-size: var(--td-font-size-body-medium);
+}
+
+.markdown-body p {
+  line-height: 30px;
 }
 
 .markdown-body table {
@@ -240,5 +249,4 @@ function handleSend(value: string) {
 .markdown-body th {
   background-color: var(--td-bg-color-secondarycontainer-hover); /* 表头背景 */
 }
-
 </style>

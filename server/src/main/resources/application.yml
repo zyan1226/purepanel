@@ -13,12 +13,14 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/purepanel?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false
+    #url: jdbc:mysql://192.168.80.129:3306/purepanel?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 122699
   data:
     redis:
       database: 0
       host: localhost
+      #host: 192.168.80.129
       port: 6379
   ai:
     dashscope:
