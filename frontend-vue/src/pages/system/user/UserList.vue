@@ -79,7 +79,7 @@ function handleAdd() {
 }
 
 //定义表格列
-const columns: EnhancedTableProps<UserPageListRes>['columns'] = [
+const columns: EnhancedTableProps['columns'] = [
   {
     colKey: "account",
     title: "账号",
@@ -156,7 +156,7 @@ const columns: EnhancedTableProps<UserPageListRes>['columns'] = [
       return (<t-space>
         <t-link theme="primary" onClick={() => {
           childrenComponentVisible.value.formDrawer = true
-          currentOperateUserInfo.value = row;
+          currentOperateUserInfo.value = row as UserPageListRes;
         }}>编辑
         </t-link>
         <t-dropdown hideAfterItemClick={false} options={moreOptions}>

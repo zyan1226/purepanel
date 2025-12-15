@@ -70,7 +70,7 @@ function resetSearchFormData() {
 }
 
 //定义表格列
-const columns: EnhancedTableProps<SysGroupTreeListRes>['columns'] = [
+const columns: EnhancedTableProps['columns'] = [
   {
     colKey: "name",
     title: "名称",
@@ -116,7 +116,7 @@ const columns: EnhancedTableProps<SysGroupTreeListRes>['columns'] = [
       return (
           <t-space>
             <t-link theme="primary" onClick={() => {
-              oldData.value = {...row}
+              oldData.value = {...row} as SysGroup
               formModalVisible.value = true
             }}>编辑
             </t-link>
