@@ -2,7 +2,7 @@
   <div class="h-14 absolute top-0 w-full backdrop-blur-3xl
     flex flex-row items-center px-6">
     <img class="w-10" src="@/assets/logo.png" alt="cloud"/>
-    <p class="ml-2 text-2xl font-serif text-[var(--td-text-color-brand)]">
+    <p class="ml-2 text-2xl font-serif text-(--td-text-color-brand)">
       PurePanel
     </p>
     <div class="ml-auto">

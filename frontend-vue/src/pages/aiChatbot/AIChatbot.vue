@@ -1,20 +1,20 @@
 <template>
-  <div class="flex-row h-screen flex text-[var(--td-text-color-primary)]">
+  <div class="flex-row h-screen flex text-(--td-text-color-primary)">
     <div class="flex flex-col w-1/6 min-w-max p-4 mt-12">
       <div class="flex items-center flex-row p-2 gap-1
-          hover:bg-[var(--td-bg-color-container-hover)] cursor-pointer rounded-lg"
+          hover:bg-(--td-bg-color-container-hover) cursor-pointer rounded-lg"
            @click="handleNewConversation">
         <t-icon name="edit-1"/>
         <span>新聊天</span>
       </div>
-      <p v-if="conversationList.length > 0" class="text-[var(--td-text-color-secondary)] mt-8 ml-2">历史聊天</p>
+      <p v-if="conversationList.length > 0" class="text-(--td-text-color-secondary) mt-8 ml-2">历史聊天</p>
       <div v-for="conversation in conversationList"
            :key="conversation.id"
            @mouseenter="hoverConversationId=conversation.id"
            @mouseleave="hoverConversationId = ''"
            @click="()=>handleConversationClick(conversation.id)"
-           :class="['flex items-center flex-row p-2 hover:bg-[var(--td-bg-color-container-hover)] cursor-pointer rounded-lg mt-2',
-           currentConversationId === conversation.id ? 'bg-[var(--td-bg-color-container-hover)]' : '']">
+           :class="['flex items-center flex-row p-2 hover:bg-(--td-bg-color-container-hover) cursor-pointer rounded-lg mt-2',
+           currentConversationId === conversation.id ? 'bg-(--td-bg-color-container-hover)' : '']">
         <span class="w-48 text-ellipsis overflow-hidden text-nowrap">{{ conversation.title }}</span>
         <t-dropdown v-if="hoverConversationId === conversation.id || currentConversationId === conversation.id"
                     trigger="click"
@@ -27,7 +27,7 @@
     </div>
     <chat
         ref="chatRef"
-        class="!px-2 !pb-4 border-l border-l-[var(--td-border-level-1-color)]"
+        class="px-2! pb-4! border-l border-l-(--td-border-level-1-color)"
         :reverse="false"
         :clear-history="false">
       <div v-if="chatList.length === 0" class="flex flex-col justify-center gap-14 h-full">

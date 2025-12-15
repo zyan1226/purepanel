@@ -38,7 +38,7 @@ import {groupSaveApi} from "@/api/groupApi.ts";
 
 //定义接收的参数
 const props = defineProps<{
-  dialogVisible: Boolean;
+  dialogVisible: boolean;
   oldData?: SysGroup | null;
   allTreeList: SysGroupTreeListRes[] | undefined;
 }>()

@@ -31,13 +31,13 @@ import {MessagePlugin} from "tdesign-vue-next";
 
 //定义接收的参数
 const props = defineProps<{
-  drawerVisible: Boolean;
+  drawerVisible: boolean;
   roleId: string;
 }>()
 
 //定义事件
 const emit = defineEmits<{
-  (e: 'update:drawerVisible', value: Boolean): void;
+  (e: 'update:drawerVisible', value: boolean): void;
 }>()
 
 onMounted(() => {

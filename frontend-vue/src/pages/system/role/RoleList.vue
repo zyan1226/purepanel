@@ -78,7 +78,7 @@ function resetSearchFormData() {
 //表格数据定义
 const data = ref<SysRole[]>();
 //定义表格列
-const columns: EnhancedTableProps<SysRole>['columns'] = [
+const columns: EnhancedTableProps['columns'] = [
   {
     colKey: "name",
     title: "名称",

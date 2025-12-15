@@ -147,7 +147,7 @@ const columns: EnhancedTableProps<UserPageListRes>['columns'] = [
             return (
                 <t-popconfirm content={"确定删除吗？"}
                               onConfirm={() => deleteUser(row.id!)}>
-                  <div class="text-[var(--td-error-color)]">删除</div>
+                  <div class="text-(--td-error-color)">删除</div>
                 </t-popconfirm>
             )
           }

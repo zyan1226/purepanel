@@ -1,11 +1,11 @@
 <template>
-  <t-menu class="!bg-[var(--td-bg-color-container-hover)] shadow-xl rounded-xl border
-  dark:border-[var(--td-brand-color-light)] border-[var(--td-brand-color-focus)]" :value="activeMenu"
+  <t-menu :value="activeMenu" class="bg-(--td-bg-color-container-hover)! shadow-xl rounded-xl border
+  dark:border-(--td-brand-color-light) border-(--td-brand-color-focus)"
           :collapsed="useAsideCollapsedStore().asideCollapsed"
           :expandMutex="true">
     <div class="w-full flex flex-row items-center justify-center mb-4 gap-2">
       <img class="w-10" src="@/assets/logo.png" alt="cloud"/>
-      <p v-if="!useAsideCollapsedStore().asideCollapsed" class="text-2xl font-serif text-[var(--td-text-color-brand)]">
+      <p v-if="!useAsideCollapsedStore().asideCollapsed" class="text-2xl font-serif text-(--td-text-color-brand)">
         PurePanel
       </p>
     </div>

@@ -19,12 +19,12 @@
         </t-form-item>
         <t-form-item name="captcha">
           <div class="flex flex-row items-center w-full">
-            <t-input class="!w-54" v-model="formData.captcha" clearable placeholder="请输入验证码">
+            <t-input v-model="formData.captcha" class="w-54!" clearable placeholder="请输入验证码">
               <template #prefix-icon>
                 <VerifiedIcon/>
               </template>
             </t-input>
-            <img @click="getCaptchaData" class="h-[var(--td-comp-size-l)] cursor-pointer rounded-md ml-auto"
+            <img class="h-(--td-comp-size-l) cursor-pointer rounded-md ml-auto" @click="getCaptchaData"
                  :src="captchaRes.captchaBase64" alt=""/>
           </div>
         </t-form-item>

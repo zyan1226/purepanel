@@ -6,7 +6,7 @@
         <t-input clearable v-model="searchFormData.title" placeholder="按标题模糊查询"/>
       </t-form-item>
       <t-form-item label-width="0" name="path">
-        <t-input clearable v-model="searchFormData.path" class="!w-64" placeholder="按访问路径模糊查询"/>
+        <t-input v-model="searchFormData.path" class="w-64!" clearable placeholder="按访问路径模糊查询"/>
       </t-form-item>
       <t-form-item label-width="0" name="type">
         <t-select clearable v-model="searchFormData.type" placeholder="按类型查询">
@@ -24,7 +24,7 @@
           重置
         </t-button>
       </div>
-      <t-button class="!ml-auto" @click="handelAddClick">
+      <t-button class="ml-auto!" @click="handelAddClick">
         新增
       </t-button>
     </t-form>
@@ -131,7 +131,7 @@ const columns: EnhancedTableProps['columns'] = [
           content: () => {
             return (
                 <t-popconfirm content={"如存在下级，也将一并删除。确定删除吗？"} onConfirm={() => deleteById(row.id)}>
-                  <div class="text-[var(--td-error-color)]">删除</div>
+                  <div class="text-(--td-error-color)">删除</div>
                 </t-popconfirm>
             )
           }

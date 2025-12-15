@@ -1,11 +1,11 @@
 <template>
-  <t-layout class="!bg-transparent">
+  <t-layout class="bg-transparent!">
     <t-aside class="max-w-min my-4 ml-4">
       <layout-aside-nav/>
     </t-aside>
-    <t-layout class="h-screen !bg-transparent overflow-hidden">
+    <t-layout class="h-screen bg-transparent! overflow-hidden">
       <layout-header/>
-      <t-content class="bg-[var(--td-bg-color-container)]">
+      <t-content class="bg-(--td-bg-color-container)">
         <layout-content/>
       </t-content>
     </t-layout>

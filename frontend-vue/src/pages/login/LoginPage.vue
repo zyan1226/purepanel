@@ -1,6 +1,6 @@
 <template>
   <div id="page" class="flex flex-col h-screen justify-center bg-cover
-  bg-[100%] bg-[url(@/assets/assets-login-bg-white.png)] dark:bg-[url(@/assets/assets-login-bg-black.png)]">
+  bg-position-[100%] bg-[url(@/assets/assets-login-bg-white.png)] dark:bg-[url(@/assets/assets-login-bg-black.png)]">
     <login-header/>
     <login-form/>
   </div>

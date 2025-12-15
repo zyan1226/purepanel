@@ -1,6 +1,6 @@
 <template>
   <page-box title="个人资料">
-    <t-form class="w-1/3 !mt-6"
+    <t-form class="w-1/3 mt-6!"
             @submit="handleSubmit"
             :rules="formRules"
             :data="formData">
@@ -15,7 +15,7 @@
             <span>
               上传新头像
               <br/>
-              <t-typography-text theme="secondary" class="!text-sm">
+              <t-typography-text class="text-sm!" theme="secondary">
                 理想的图片比例为 1:1，允许的最大文件大小为 2 MB。
               </t-typography-text>
             </span>
@@ -41,7 +41,7 @@
       </t-form-item>
       <t-form-item>
         <t-button type="submit">保存</t-button>
-        <t-button class="!ml-4" theme="default" @click="router.back()">取消</t-button>
+        <t-button class="ml-4!" theme="default" @click="router.back()">取消</t-button>
       </t-form-item>
     </t-form>
   </page-box>
@@ -55,7 +55,7 @@ import type {AccountLoginRes} from "@/api/loginApi.ts";
 import type {UploadFile} from "tdesign-vue-next/es/upload/type";
 import {uploadFileApi} from "@/api/commonApi.ts";
 import {getFileNetworkPath} from "@/utils/fileUtils.ts";
-import {type FormProps, MessagePlugin} from "tdesign-vue-next";
+import {type FormProps, MessagePlugin, type RequestMethodResponse} from "tdesign-vue-next";
 import {selfEditApi} from "@/api/userApi.ts";
 
 const router = useRouter()
@@ -100,7 +100,7 @@ const formRules: FormProps['rules'] = {
 }
 
 //上传头像
-async function uploadAvatar(file: UploadFile) {
+async function uploadAvatar(file: UploadFile): Promise<RequestMethodResponse> {
   const res = await uploadFileApi(file.raw!, 'avatar')
   formData.avatar = res.payload
   const fileNetworkPath = getFileNetworkPath(res.payload);

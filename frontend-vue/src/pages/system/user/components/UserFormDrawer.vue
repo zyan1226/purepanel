@@ -54,7 +54,7 @@
 </template>
 <script setup lang="ts">
 import type {UserPageListRes, UserSaveReq} from "@/types/SysUser.ts";
-import {type FormProps, MessagePlugin, type SelectProps} from "tdesign-vue-next";
+import {type FormProps, MessagePlugin, type RequestMethodResponse, type SelectProps} from "tdesign-vue-next";
 import {onMounted, reactive, ref, watch} from "vue";
 import {uploadFileApi} from "@/api/commonApi.ts";
 import type {UploadFile} from "tdesign-vue-next/es/upload/type";
@@ -73,13 +73,13 @@ onMounted(() => {
 
 //定义接收的参数
 const props = defineProps<{
-  drawerVisible: Boolean;
+  drawerVisible: boolean;
   oldData: UserPageListRes;
 }>()
 
 //定义事件
 const emit = defineEmits<{
-  (e: 'update:drawerVisible', value: Boolean): void;
+  (e: 'update:drawerVisible', value: boolean): void;
   (e: 'submit-success'): void;
 }>()
 
@@ -189,8 +189,8 @@ function getGroupTree() {
 }
 
 //上传头像
-async function uploadAvatar(file: UploadFile) {
-  const res = await uploadFileApi(file.raw!,'avatar');
+async function uploadAvatar(file: UploadFile): Promise<RequestMethodResponse> {
+  const res = await uploadFileApi(file.raw!, 'avatar');
   formData.avatar = res.payload;
   return {
     status: 'success',

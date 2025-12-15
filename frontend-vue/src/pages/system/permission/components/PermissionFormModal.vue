@@ -37,7 +37,7 @@
               v-model="formData.icon"
               placeholder="请选择"
               :popup-props="{ overlayInnerStyle: { width: '360px' } }">
-            <t-option v-for="item in iconOptions" :key="item.stem" :value="item.stem" class="!inline-block !text-2xl">
+            <t-option v-for="item in iconOptions" :key="item.stem" :value="item.stem" class="inline-block! text-2xl!">
               <div>
                 <t-icon :name="item.stem"/>
               </div>
@@ -85,7 +85,7 @@ const parentOptionsTree: TreeSelectProps['treeProps'] = {
 //定义接收的参数
 const props = defineProps<{
   allTreeList: SysPermissionTreeListRes[] | undefined;
-  dialogVisible: Boolean;
+  dialogVisible: boolean;
   oldData?: SysPermission | null;
 }>()
 
@@ -150,11 +150,17 @@ const handleSubmit: FormProps['onSubmit'] = ({validateResult}) => {
   })
 };
 
-function handleTypeChange(value: string) {
-  if (value === '2') {
+function handleTypeChange(value: any) {
+  if (value === '0') {
+    formData.authCode = undefined
+  } else if (value === '1') {
+    formData.path = undefined
+    formData.icon = undefined
+  } else if (value === '2') {
     formData.pid = undefined
     formData.path = undefined
     formData.icon = undefined
+    formData.authCode = undefined
   }
 }
 </script>

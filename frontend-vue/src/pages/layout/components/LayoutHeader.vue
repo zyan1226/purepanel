@@ -1,29 +1,29 @@
 <template>
-  <t-head-menu class="!bg-transparent !absolute !w-0 !h-0">
-    <t-button class="shadow-xl !bg-transparent backdrop-blur-3xl !fixed" variant="text" shape="round"
+  <t-head-menu class="bg-transparent! absolute! w-0! h-0!">
+    <t-button class="shadow-xl bg-transparent! backdrop-blur-3xl fixed!" shape="round" variant="text"
               @click="useAsideCollapsedStore().reverse()">
       <template #icon>
         <t-icon :name="useAsideCollapsedStore().asideCollapsed?'menu-fold':'menu-unfold'" size="20"/>
       </template>
     </t-button>
-    <div class="ml-auto flex flex-row items-center justify-center !fixed right-2
-    mr-[var(--td-comp-margin-xxl)] gap-2 px-2 py-1 shadow-xl !bg-transparent backdrop-blur-3xl rounded-full">
+    <div class="ml-auto flex flex-row items-center justify-center fixed! right-2
+    mr-(--td-comp-margin-xxl) gap-2 px-2 py-1 shadow-xl bg-transparent! backdrop-blur-3xl rounded-full">
       <t-tooltip content="AI 助理">
-        <t-button class="!p-2" variant="text" shape="round" @click="router.push('/aiChatbot')">
+        <t-button class="p-2!" shape="round" variant="text" @click="router.push('/aiChatbot')">
           <template #icon>
             <t-icon name="chat-bubble-smile"/>
           </template>
         </t-button>
       </t-tooltip>
       <t-tooltip content="开启/关闭全屏">
-        <t-button class="!p-2" variant="text" shape="round" @click="toggleFullScreen">
+        <t-button class="p-2!" shape="round" variant="text" @click="toggleFullScreen">
           <template #icon>
             <t-icon :name="isFullScreen?'fullscreen-exit':'fullscreen'"/>
           </template>
         </t-button>
       </t-tooltip>
       <t-dropdown :options="avatarDropdownOptions" max-column-width="300px">
-        <t-button class="!p-1" variant="text" shape="round">
+        <t-button class="p-1!" shape="round" variant="text">
           <t-avatar v-if="avatarUrl" size="small" shape="circle"
                     :image="avatarUrl"/>
           <t-avatar v-else size="small" shape="circle">
