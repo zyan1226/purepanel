@@ -27,7 +27,7 @@
     </div>
     <chat
         ref="chatRef"
-        class="px-2! pb-4! border-l border-l-(--td-border-level-1-color)"
+        class="px-60! pb-4! border-l border-l-(--td-border-level-1-color)"
         :reverse="false"
         :clear-history="false">
       <div v-if="chatList.length === 0" class="flex flex-col justify-center gap-14 h-full">
