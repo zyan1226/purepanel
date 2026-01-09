@@ -1,6 +1,6 @@
 <template>
-  <div class="flex-row h-screen flex text-(--td-text-color-primary)">
-    <div class="flex flex-col w-1/6 min-w-max p-4 mt-12">
+  <page-box class="flex-row h-[96%] flex ">
+    <div class="flex flex-col w-1/6 min-w-max p-4">
       <div class="flex items-center flex-row p-2 gap-1
           hover:bg-(--td-bg-color-container-hover) cursor-pointer rounded-lg"
            @click="handleNewConversation">
@@ -53,7 +53,7 @@
         </chat-sender>
       </template>
     </chat>
-  </div>
+  </page-box>
 </template>
 <script setup lang="tsx">
 import {nextTick, onMounted, ref} from 'vue';

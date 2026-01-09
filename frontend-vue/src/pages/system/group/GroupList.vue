@@ -1,6 +1,5 @@
 <template>
-  <div class="h-full flex flex-col gap-4 p-6">
-    <p class="text-3xl font-bold mt-14">群组管理</p>
+  <page-box title="群组管理">
     <t-form @reset="resetSearchFormData" @submit="getGroupTreeList" layout="inline">
       <t-form-item label-width="0">
         <t-input clearable v-model="searchFormData.name" placeholder="按名称模糊查询"/>
@@ -32,7 +31,7 @@
                       :all-tree-list="data"
                       :old-data="oldData"
                       @submit-success="getGroupTreeList"/>
-  </div>
+  </page-box>
 </template>
 
 <script setup lang="tsx">

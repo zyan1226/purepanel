@@ -1,13 +1,12 @@
 <template>
-  <t-head-menu class="bg-transparent! absolute! w-0! h-0!">
-    <t-button class="shadow-xl bg-transparent! backdrop-blur-3xl fixed!" shape="round" variant="text"
+  <t-head-menu>
+    <t-button shape="round" variant="text"
               @click="useAsideCollapsedStore().reverse()">
       <template #icon>
-        <t-icon :name="useAsideCollapsedStore().asideCollapsed?'menu-fold':'menu-unfold'" size="20"/>
+        <t-icon :name="useAsideCollapsedStore().asideCollapsed?'indent-right':'indent-left'"/>
       </template>
     </t-button>
-    <div class="ml-auto flex flex-row items-center justify-center fixed! right-2
-    mr-(--td-comp-margin-xxl) gap-2 px-2 py-1 shadow-xl bg-transparent! backdrop-blur-3xl rounded-full">
+    <div class="ml-auto flex flex-row items-center justify-center mr-(--td-comp-margin-xxl) gap-2 px-2 py-1">
       <t-tooltip content="AI 助理">
         <t-button class="p-2!" shape="round" variant="text" @click="router.push('/aiChatbot')">
           <template #icon>

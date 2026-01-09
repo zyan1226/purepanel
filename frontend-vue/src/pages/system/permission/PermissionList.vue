@@ -1,6 +1,5 @@
 <template>
-  <div class="h-full flex flex-col gap-4 p-6">
-    <p class="text-3xl font-bold mt-14">菜单权限</p>
+  <page-box title="菜单权限">
     <t-form @reset="resetSearchFormData" @submit="getPermissionTreeList" layout="inline">
       <t-form-item label-width="0">
         <t-input clearable v-model="searchFormData.title" placeholder="按标题模糊查询"/>
@@ -39,7 +38,7 @@
                       :tree="treeConfig"/>
     <permission-form-modal :old-data="oldData" v-model:dialog-visible="dialogVisible" :all-tree-list="data"
                            @submit-success="getPermissionTreeList"/>
-  </div>
+  </page-box>
 </template>
 
 <script setup lang="tsx">

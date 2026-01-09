@@ -2,8 +2,6 @@
 @custom-variant dark (&:where([theme-mode=dark], [theme-mode=dark] *));
 
 body {
-    background-color: var(--td-bg-color-container);
-    color: var(--td-text-color-primary);
     width: 100% !important;
 }
 
